@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>Formulario de alta</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    function mostrarAlerta(mensaje) {
+      alert(mensaje);
+      document.getElementById("registroForm").reset();
+    }
+
+    function validarRegistro(event) {
+      event.preventDefault();
+      var form = event.target;
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method:"POST",
+        body: formData
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error("Error al registrar el usuario.");
+          }
+        })
+        .then(function (data) {
+          mostrarAlerta(data);
+          document.getElementById("consultarUsuarios").style.display ="inline";
+          form.reset();
+        })
+        .catch(function (error) {
+          alert(error.message);
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Formulario de Registro</h2>
+  <form id="registroForm" action="registrar.php" method="POST" onsubmit="validarRegistro(event)">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" required>
+    <br><br>
+
+    <label for="apellido1">Primer apellido:</label>
+    <input type="text" name="apellido1" required>
+    <br><br>
+
+    <label for="apellido2">Segundo apellido:</label>
+    <input type="text" name="apellido2" required>
+    <br><br>
+
+    <label for="email">Correo electronico:</label>
+    <input type="email" name="email" required>
+    <br><br>
+
+    <label for="password">Clave:</label>
+    <input type="password" name="password" minlength="4" maxlength="8" required>
+    <br><br>
+
+    <div class="button-container">
+      <input type="submit" value="Enviar">
+      <button id="consultarUsuarios"  onclick="location.href='consultar.php'">Consultar Usuarios</button>
+      <!--Valido lo envia igual-->
+    </div>
+  </form>
+  
+</body>
+</html>

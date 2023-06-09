@@ -1,0 +1,123 @@
+/*reset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*index.html*/
+body{
+  font-family: Calibri;
+  background-color: #553171df;
+  margin: 0;
+  padding: 20px;
+}
+
+h2{
+  text-align: center;
+  color: #ffffff;
+}
+
+form{
+  background-color: #ffffff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+label{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="submit"]{
+  background-color: #7845a0;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover{
+  background-color: #663a87;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+button#consultarUsuarios{
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: none;
+}
+
+button#consultarUsuarios:hover{
+  background-color: #0062cc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"], button#consultarUsuarios{
+  flex: 1;
+  margin-right: 10px;
+}
+  
+
+/*consultar.php*/
+table{
+  width: 100%;
+  border-collapse: collapse;
+  }
+  
+  th, td{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+  color: #e9cbff;
+  }
+
+  th{
+  color: #ffffff;
+  }
+    
+  .email{
+  color: #ffffff;
+  font-weight: bold;
+  }
+  
+  .error{
+  color: red;
+  }
+
+  .volver{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #553171df;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  }
+
+  .volver:hover{
+  background-color: #553171df;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
